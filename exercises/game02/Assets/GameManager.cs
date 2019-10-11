@@ -5,18 +5,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    int gridWidth = 25;
-    int gridHeight = 25;
+    int gridWidth = 50;
+    int gridHeight = 50;
 
     float cellDimension = 1f;
-    float cellSpacing = 0.2f;
+    float cellSpacing = 0.1f;
 
     public CellScript[ , ] grid;
 
     public GameObject cellPrefab;
     bool simulate = false;
 
-    float generationRate = 1f;
+    float generationRate = 0.5f;
     float generationTimer;
 
     int time = 0;
