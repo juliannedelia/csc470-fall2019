@@ -3,7 +3,7 @@ When Feelings Have Feelings
 
 My game will have five different colored units moving around the screen. These five units each have meters on what is good for them and what "kills" them. The five units are inspired by the five emotions in the movie, *Inside Out.* 
 
-###Character Breakdown
+### Character Breakdown
 
 The yellow unit's name will be called *Merry* and its **good** meter will be filled when another unit says something happy. Its **bad** meter will be filled when another unit says something angry, sad, fearful, or disgusting. 
 
@@ -16,7 +16,7 @@ The purple unit will be called *Panic* and its **good** meter will be filled whe
 The red unit will be called *Rage* and its **good** meter will be filled when someone says something angry. Its **bad** meter will be filled when someone says something joyful, gloomy, distasteful or fearful.
 
 
-###Objective
+### Objective
 
 The object of this game is to be the last unit standing. For example, If you're *Rage*, you will want to kill off *Merry*, *Gloomy*, *Distaste* and *Panic*. In order to kill off the other units, you have to say things that will fill their bad meters. In order to fill your own good meter, you collect the coins around the arena that match your unit's color. Using the *Rage* example, you would have to collect red coins to fill your good meter. The coins will have phrases on them that match 
 
