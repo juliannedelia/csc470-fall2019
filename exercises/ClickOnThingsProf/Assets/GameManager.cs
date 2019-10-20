@@ -11,11 +11,10 @@ public class GameManager : MonoBehaviour
 
 	public GameObject talkBox;
 	public Text talkText;
+	public ToggleGroup actionSelectToggleGroup;
 	public GameObject selectedPanel;
 	public Text nameText;
 	public Image portraitImage;
-
-	
 
 	// Start is called before the first frame update
 	void Start()
@@ -76,8 +75,8 @@ public class GameManager : MonoBehaviour
 
 		Vector3 pos = selectedUnit.transform.position + Vector3.up * 2;
 		pos = Camera.main.WorldToScreenPoint(pos);
-		//pos += talkBox..localScale.y / 2;
-		talkBox.transform.position = Camera.main.WorldToScreenPoint(selectedUnit.transform.position);
+		pos.y += talkBox.GetComponent<RectTransform>().rect.height;
+
 
 
 		updateUI();

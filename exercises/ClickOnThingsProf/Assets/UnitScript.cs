@@ -17,8 +17,6 @@ public class UnitScript : MonoBehaviour
 	CharacterController cc;
 	public Vector3 destination;
 
-	
-
 	// NOTE: We set this reference in the prefab editor within the Unity editor.
 	public Renderer rend;
 
