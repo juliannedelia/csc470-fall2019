@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class playerHealth : MonoBehaviour
     public int currentHealth;                                   
     public Slider healthSlider; 
     
-    bool isDead;
+    //bool isDead;
     bool damanged;
 
     public GameObject unitPrefab;                               
@@ -26,13 +27,13 @@ public class playerHealth : MonoBehaviour
         damanged = false;
     }
 
-    public void TakeDamaage(int amount)
+    public void TakeDamage(int amount)
     {
         damanged = true;
         currentHealth -= amount;
         healthSlider.value = currentHealth;
 
-        if(currentHealth <= 0 && !isDead)
+        if(currentHealth == 0)
         {
             Death();
         }
@@ -40,7 +41,17 @@ public class playerHealth : MonoBehaviour
 
     void Death()
     {
-        isDead = true;
-        Destroy(unitPrefab);
+        if(unitPrefab.gameObject.tag == "merry")
+        {
+            SceneManager.LoadScene("youLose");
+        }
+
+        if(unitPrefab.gameObject.tag == "villian")
+        {
+            Destroy(unitPrefab);
+        }
+        //isDead = true;
+        //Destroy(unitPrefab);
+
     }
 }

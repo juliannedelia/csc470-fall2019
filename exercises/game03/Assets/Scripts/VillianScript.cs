@@ -18,16 +18,27 @@ public class VillianScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DelayShoot());
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position + Vector3.up * 0.1f + transform.forward * 0.1f;
-        GameObject insult = Instantiate(InsultPrefab, pos, transform.rotation);
         
-        Destroy(insult, 2);
+        
+        
+    }
+
+    IEnumerator DelayShoot()
+    {
+        while(true) {
+            Vector3 pos = transform.position + Vector3.up * 0.1f + transform.forward * 0.1f;
+            GameObject insult = Instantiate(InsultPrefab, pos, transform.rotation);
+            Destroy(insult, 2);
+            //print(Time.time);
+            yield return new WaitForSeconds(1);
+            //print(Time.time);
+        }
     }
 
     void OnTriggerEvent(Collider unit)

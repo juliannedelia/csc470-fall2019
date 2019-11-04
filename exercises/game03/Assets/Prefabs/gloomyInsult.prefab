@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6603468185204621507}
   m_Layer: 0
   m_Name: gloomyInsult
-  m_TagString: Untagged
+  m_TagString: insult
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,5 +134,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9, y: 2.6351564, z: 0}
+  m_Size: {x: 3.9, y: 2.6351564, z: 0.79}
   m_Center: {x: 1.95, y: -1.3175782, z: 0}

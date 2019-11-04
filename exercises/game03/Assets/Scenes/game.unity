@@ -5075,6 +5075,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Merry
       objectReference: {fileID: 0}
+    - target: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
+        type: 3}
+      propertyPath: m_TagString
+      value: merry
+      objectReference: {fileID: 0}
     - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: name
@@ -5191,6 +5196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763788974578552346, guid: de271586b79ab4d8e92b9d57337e4530,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
