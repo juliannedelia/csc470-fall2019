@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UnitScript : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UnitScript : MonoBehaviour
 
 	public string name;
 	public Sprite portrait;
+
+	public float health;
 
 	Color defautColor;
 	public Color hoverColor;
@@ -23,10 +26,12 @@ public class UnitScript : MonoBehaviour
 	GameManager gm;
 
 
+	public GameObject merryWordsPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
-		//health = Random.Range(60,100);
+		health = 100;
         GameObject gmObj = GameObject.Find("GameManagerObject");
 		gm = gmObj.GetComponent<GameManager>();
 
@@ -54,6 +59,13 @@ public class UnitScript : MonoBehaviour
 
 			cc.Move(transform.forward * 5 * Time.deltaTime);
 		}
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			Vector3 pos = transform.position + Vector3.up * 0.5f + transform.forward * 0.5f;
+			GameObject mWords = Instantiate(merryWordsPrefab, pos, transform.rotation);
+			Destroy(mWords, 3);
+		}
     }
 
 	public void setColorOnMouseState()
@@ -77,10 +89,10 @@ public class UnitScript : MonoBehaviour
 		hover = true;
 		setColorOnMouseState();
 
-		/* gm.healthMeterObject.SetActive(true);
+		gm.healthMeterObject.SetActive(true);
 		gm.meterFG.fillAmount = health / 100;
 		gm.healthMeterObject.transform.position = Camera.main.WorldToScreenPoint(
-																		transform.position + Vector3.up * 2); */
+																		transform.position + Vector3.up * 2);
 	}
 	private void OnMouseExit()
 	{
@@ -101,5 +113,14 @@ public class UnitScript : MonoBehaviour
 			gm.selectUnit(null);
 		}
 		setColorOnMouseState();
+		
+	}
+
+	void OnCollisionEnter(Collision unit)
+	{
+		if(unit.gameObject.tag == "insult")
+		{
+			SceneManager.LoadScene("youLose");
+		}
 	}
 }

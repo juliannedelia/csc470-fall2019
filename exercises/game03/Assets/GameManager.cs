@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //SceneManager.LoadScene("title");
+        
     }
 
     // Update is called once per frame
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(selectedUnit != null)
 		{
-			nameText.Text = selectedUnit.name;
+			nameText.text = selectedUnit.name;
 			portraitImage.sprite = selectedUnit.portrait;
 			selectedPanel.SetActive(true);
 		}
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
 		StartCoroutine(displayTalkBoxMessages(new string[] {action, "I'm done", "Actually, one more thing...", "Never mind..."}));
 	}
 
-	IEnumerable displayTalkBoxMessages(string[] messages)
+	IEnumerator displayTalkBoxMessages(string[] messages)
 	{
 		talkBox.SetActive(true);
 		for(int i = 0; i < messages.Length; i++)
@@ -126,5 +126,5 @@ public class GameManager : MonoBehaviour
 		}
 
 		talkBox.SetActive(false);
-	}
+	} 
 }
