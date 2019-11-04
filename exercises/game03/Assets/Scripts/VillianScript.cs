@@ -24,9 +24,10 @@ public class VillianScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position + Vector3.up * 0.5f + transform.forward * 0.5f;
+        Vector3 pos = transform.position + Vector3.up * 0.1f + transform.forward * 0.1f;
         GameObject insult = Instantiate(InsultPrefab, pos, transform.rotation);
-        Destroy(insult, 1);
+        
+        Destroy(insult, 2);
     }
 
     /* void OnCollisionEnter(Collision unit)
