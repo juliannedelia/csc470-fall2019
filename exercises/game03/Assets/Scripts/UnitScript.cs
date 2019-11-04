@@ -62,7 +62,7 @@ public class UnitScript : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			Vector3 pos = transform.position + Vector3.up * 0.5f + transform.forward * 0.5f;
+			Vector3 pos = transform.position + Vector3.up * 1.5f + transform.forward * 1.5f;
 			GameObject mWords = Instantiate(merryWordsPrefab, pos, transform.rotation);
 			Destroy(mWords, 3);
 		}

@@ -20,18 +20,11 @@ public class projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StartCoroutine(Delay());
         transform.position += transform.forward * speed * Time.deltaTime;
 
         // transform.LookAt(merry.transform, Vector3.up);
     }
 
-   /*  IEnumerator Delay()
-    {
-        //print(Time.time);
-        yield return new WaitForSeconds(5);
-        //print(Time.time);
-    } */
 
     void OnTriggerEnter(Collider c)
 	{
@@ -40,11 +33,11 @@ public class projectile : MonoBehaviour
 			Destroy(gameObject);
 		}
 
-        if(c.gameObject.tag == "merry")
+        if(c.gameObject.tag == "merry" && gameObject.tag == "insult")
         {
             playerHealth us = c.gameObject.GetComponent<playerHealth>();
             us.TakeDamage(10);
-            Debug.Log("hit");
+            Debug.Log("hit by villian");
             /* if(us.health == 0)
             {
                 SceneManager.LoadScene("youLose");
@@ -55,6 +48,7 @@ public class projectile : MonoBehaviour
         {
             playerHealth vs = c.gameObject.GetComponent<playerHealth>();
             vs.TakeDamage(10);
+            Debug.Log("hit by hero");
             /* if(vs.health == 0)
             {
                 SceneManager.LoadScene("youWin");
