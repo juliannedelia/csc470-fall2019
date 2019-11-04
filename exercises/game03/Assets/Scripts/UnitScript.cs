@@ -116,11 +116,24 @@ public class UnitScript : MonoBehaviour
 		
 	}
 
-	void OnCollisionEnter(Collision unit)
+	/* void OnTriggerEnter(Collider unit)
 	{
 		if(unit.gameObject.tag == "insult")
 		{
 			SceneManager.LoadScene("youLose");
+			//playerHealth cs = healthObj.AddComponent<playerHealth()>;
 		}
-	}
+	} */
+
+	/* void OnTriggerEvent(Collider unit)
+	{
+		if(unit.gameObject.tag == "insult")
+		{
+			health -= 1;
+		}
+        if(health == 0)
+        {
+            SceneManager.LoadScene("youLose");
+        }
+	}  */
 }

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class projectile : MonoBehaviour
 {
-    float speed = 5.5f;
+    float speed = 5f;
+    GameObject unitObj;
+    GameObject villianObj;
 
     // Start is called before the first frame update
     void Start()
@@ -15,14 +18,42 @@ public class projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(Delay());
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 
-    void OnCollisionEnter(Collision collision)
+    IEnumerator Delay()
+    {
+        //print(Time.time);
+        yield return new WaitForSeconds(5);
+        //print(Time.time);
+    }
+
+    void OnTriggerEnter(Collider c)
 	{
-		if(collision.gameObject.tag == "wall")
+		if(c.gameObject.tag == "wall")
 		{
 			Destroy(gameObject);
 		}
+
+        if(c.gameObject.tag == "merry")
+        {
+            UnitScript us = unitObj.AddComponent<UnitScript>();
+            us.health -= 1;
+            if(us.health == 0)
+            {
+                SceneManager.LoadScene("youLose");
+            }
+        }
+
+        if(c.gameObject.tag == "villian")
+        {
+            VillianScript vs = villianObj.AddComponent<VillianScript>();
+            vs.health -= 1;
+            if(vs.health == 0)
+            {
+                SceneManager.LoadScene("youWin");
+            }
+        }
 	}
 }

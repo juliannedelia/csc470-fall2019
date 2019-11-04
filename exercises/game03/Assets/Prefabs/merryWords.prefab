@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 263918662825890582}
   - component: {fileID: 8980171639978358378}
   - component: {fileID: 7847800953794993907}
+  - component: {fileID: -5015656246094142014}
   m_Layer: 0
   m_Name: merryWords
   m_TagString: merryWords
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f57224f63ee45b38d6310b5024f661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-5015656246094142014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263918662825890581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.3, y: 2.0736, z: 0}
+  m_Center: {x: 3.65, y: -1.0368, z: 0}

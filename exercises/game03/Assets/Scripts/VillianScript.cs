@@ -30,7 +30,7 @@ public class VillianScript : MonoBehaviour
         Destroy(insult, 2);
     }
 
-    /* void OnCollisionEnter(Collision unit)
+    void OnTriggerEvent(Collider unit)
 	{
 		if(unit.gameObject.tag == "merryWords")
 		{
@@ -40,5 +40,5 @@ public class VillianScript : MonoBehaviour
         {
             Destroy(unit);
         }
-	} */
+	} 
 }

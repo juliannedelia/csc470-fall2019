@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7041938850947323082}
   - component: {fileID: 2899390880585174848}
   - component: {fileID: -2490571487098175661}
+  - component: {fileID: -6952690893388128562}
   m_Layer: 0
   m_Name: panicInsult
   m_TagString: Untagged
@@ -122,3 +123,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-6952690893388128562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041938850947323083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8, y: 2.6351564, z: 0}
+  m_Center: {x: 1.4, y: -1.3175782, z: 0}
