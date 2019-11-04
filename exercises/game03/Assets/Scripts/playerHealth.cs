@@ -13,12 +13,15 @@ public class playerHealth : MonoBehaviour
     //bool isDead;
     bool damanged;
 
-    public GameObject unitPrefab;                               
+    public GameObject unitPrefab;  
+
+                                 
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = startingHealth;
+        
     }
 
     // Update is called once per frame
@@ -41,14 +44,20 @@ public class playerHealth : MonoBehaviour
 
     void Death()
     {
+        GameObject[] villians = GameObject.FindGameObjectsWithTag("villian");
         if(unitPrefab.gameObject.tag == "merry")
         {
             SceneManager.LoadScene("youLose");
         }
 
-        if(unitPrefab.gameObject.tag == "villian")
+        if(gameObject.tag == "villian")
         {
             Destroy(unitPrefab);
+            if(villians.Length == 0)
+            {
+                Debug.Log("all the villians are dead");
+                SceneManager.LoadScene("youWin");
+            }
         }
         //isDead = true;
         //Destroy(unitPrefab);

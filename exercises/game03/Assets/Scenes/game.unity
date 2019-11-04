@@ -127,6 +127,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Distaste
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.r
+      value: 0.5330188
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.b
+      value: 0.59237397
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.g
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.b
+      value: 0.043569908
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c501cf5dacfbb437c8fbf772527474b1,
+        type: 3}
     - target: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: m_Name
@@ -137,47 +170,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: villian
       objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: name
-      value: Distaste
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.r
-      value: 0.5330188
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.b
-      value: 0.59237397
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.g
-      value: 0.5283019
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.b
-      value: 0.043569908
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: c501cf5dacfbb437c8fbf772527474b1,
-        type: 3}
     - target: {fileID: 7354332489485286838, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: name
@@ -249,7 +241,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
 --- !u!1001 &164950638
 PrefabInstance:
@@ -444,7 +436,7 @@ RectTransform:
   - {fileID: 990574842}
   - {fileID: 2141630870}
   m_Father: {fileID: 851239731}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -471,11 +463,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Distaste
   portrait: {fileID: 21300000, guid: c501cf5dacfbb437c8fbf772527474b1, type: 3}
-  health: 0
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  selected: 0
+  hoverColor: {r: 0, g: 0.5188679, b: 0.08372392, a: 0}
+  selectedColor: {r: 0, g: 1, b: 0.08090758, a: 0}
   InsultPrefab: {fileID: 3577693002169477175, guid: 06b88c4a90757498a94a947856a3dc84,
     type: 3}
+  health: 0
+  rend: {fileID: 312002876}
 --- !u!114 &312002872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,9 +496,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 990574843}
+  healthSlider: {fileID: 463525869}
   unitPrefab: {fileID: 312002870}
---- !u!1 &383851574
+--- !u!23 &312002876 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5763788974578552347, guid: de271586b79ab4d8e92b9d57337e4530,
+    type: 3}
+  m_PrefabInstance: {fileID: 131008726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &353380858
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,73 +512,34 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 383851575}
-  - component: {fileID: 383851577}
-  - component: {fileID: 383851576}
+  - component: {fileID: 353380859}
   m_Layer: 5
-  m_Name: meterFG
+  m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &383851575
+--- !u!224 &353380859
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383851574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 353380858}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1411697416}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 1860543238}
+  m_Father: {fileID: 463525868}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 7.02}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: -5, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &383851576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383851574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a1c6ebfe12b0a4b599dfe05712a1ea17, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &383851577
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383851574}
-  m_CullTransparentMesh: 0
 --- !u!1001 &396622207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,11 +639,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Panic
   portrait: {fileID: 21300000, guid: d57403449a5dc4d0198382793c50d851, type: 3}
-  health: 0
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  selected: 0
+  hoverColor: {r: 0.39594737, g: 0, b: 0.7075472, a: 0}
+  selectedColor: {r: 0.65605783, g: 0, b: 1, a: 0}
   InsultPrefab: {fileID: 7041938850947323083, guid: 26c521144d09c4beb90733097b1a5578,
     type: 3}
+  health: 0
+  rend: {fileID: 428303340}
 --- !u!114 &428303336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,8 +672,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 990574843}
+  healthSlider: {fileID: 463525869}
   unitPrefab: {fileID: 428303334}
+--- !u!23 &428303340 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5763788974578552347, guid: de271586b79ab4d8e92b9d57337e4530,
+    type: 3}
+  m_PrefabInstance: {fileID: 634197438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &450855991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,6 +759,96 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4bb94b5d18303488fb25d7f1939de738, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744360e7c33f54dc1ab0d86022df0880, type: 3}
+--- !u!1 &463525867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463525868}
+  - component: {fileID: 463525869}
+  m_Layer: 5
+  m_Name: VillianHealthSlider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &463525868
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463525867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1647869959}
+  - {fileID: 353380859}
+  m_Father: {fileID: 733740040}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 95, y: 0}
+  m_SizeDelta: {x: 160, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &463525869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463525867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_FillRect: {fileID: 1860543238}
+  m_HandleRect: {fileID: 0}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 100
+  m_WholeNumbers: 0
+  m_Value: 100
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &477617920
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +880,7 @@ RectTransform:
   m_Children:
   - {fileID: 809581692}
   m_Father: {fileID: 851239731}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1151,6 +1210,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Gloomy
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.g
+      value: 0.035845075
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.b
+      value: 0.6509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 52b0343ae08704b55b1bdba58c1d606c,
+        type: 3}
     - target: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: m_Name
@@ -1161,47 +1253,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: villian
       objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: name
-      value: Gloomy
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.g
-      value: 0.035845075
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.b
-      value: 0.6509434
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 52b0343ae08704b55b1bdba58c1d606c,
-        type: 3}
     - target: {fileID: 7354332489485286838, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: name
@@ -1273,7 +1324,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
 --- !u!1001 &634197438
 PrefabInstance:
@@ -1282,6 +1333,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Panic
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.r
+      value: 0.79041815
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.g
+      value: 0.504717
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.r
+      value: 0.3437955
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: d57403449a5dc4d0198382793c50d851,
+        type: 3}
     - target: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: m_Name
@@ -1292,47 +1376,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: villian
       objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: name
-      value: Panic
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.r
-      value: 0.79041815
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.g
-      value: 0.504717
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.r
-      value: 0.3437955
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.b
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: d57403449a5dc4d0198382793c50d851,
-        type: 3}
     - target: {fileID: 7354332489485286838, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: name
@@ -1404,7 +1447,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
 --- !u!1 &636238534
 GameObject:
@@ -1488,6 +1531,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Rage
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.g
+      value: 0.6745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.b
+      value: 0.6745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.r
+      value: 0.5754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: f6da6706a8534411fafdc5851fdbc37c,
+        type: 3}
     - target: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: m_Name
@@ -1498,47 +1574,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: villian
       objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: name
-      value: Rage
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.g
-      value: 0.6745283
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.b
-      value: 0.6745283
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.r
-      value: 0.5754717
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: f6da6706a8534411fafdc5851fdbc37c,
-        type: 3}
     - target: {fileID: 7354332489485286838, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: name
@@ -1610,7 +1645,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
 --- !u!1001 &670187152
 PrefabInstance:
@@ -2021,6 +2056,43 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 719179428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &733740039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733740040}
+  m_Layer: 5
+  m_Name: VillianHealthUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &733740040
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733740039}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 463525868}
+  - {fileID: 1962895809}
+  m_Father: {fileID: 851239731}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &759165879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
@@ -2043,6 +2115,28 @@ MonoBehaviour:
   currentHealth: 0
   healthSlider: {fileID: 990574843}
   unitPrefab: {fileID: 759165879}
+--- !u!114 &759165881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759165879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e20fdbff678c47a28168dfe1389a1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+  name: Merry
+  portrait: {fileID: 21300000, guid: 89d2b9b89fa2e4cd09e437c934814322, type: 3}
+  health: 0
+  hoverColor: {r: 0.5471698, g: 0.5142543, b: 0, a: 0}
+  selectedColor: {r: 1, g: 0.96657693, b: 0, a: 0}
+  destination: {x: 0, y: 0, z: 0}
+  rend: {fileID: 5763788975164307879}
+  merryWordsPrefab: {fileID: 263918662825890581, guid: 85a8d3befa989473681124cdb4dc6a69,
+    type: 3}
 --- !u!1 &776191436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
@@ -2063,11 +2157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rage
   portrait: {fileID: 21300000, guid: f6da6706a8534411fafdc5851fdbc37c, type: 3}
-  health: 0
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  selected: 0
+  hoverColor: {r: 0.754717, g: 0, b: 0, a: 0}
+  selectedColor: {r: 1, g: 0, b: 0, a: 0}
   InsultPrefab: {fileID: 4963562360126497943, guid: 560732af6fd7a4270ba90c7bec28a7a5,
     type: 3}
+  health: 0
+  rend: {fileID: 776191442}
 --- !u!114 &776191438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,8 +2190,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 990574843}
+  healthSlider: {fileID: 463525869}
   unitPrefab: {fileID: 776191436}
+--- !u!23 &776191442 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5763788974578552347, guid: de271586b79ab4d8e92b9d57337e4530,
+    type: 3}
+  m_PrefabInstance: {fileID: 643093721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &799632148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +2438,7 @@ RectTransform:
   - {fileID: 1629900696}
   - {fileID: 690815170}
   m_Father: {fileID: 851239731}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2497,10 +2599,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1455181843}
-  - {fileID: 1411697416}
   - {fileID: 836571973}
   - {fileID: 477617921}
   - {fileID: 250849036}
+  - {fileID: 733740040}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3170,11 +3272,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gloomy
   portrait: {fileID: 21300000, guid: 52b0343ae08704b55b1bdba58c1d606c, type: 3}
-  health: 0
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  selected: 0
+  hoverColor: {r: 0, g: 0.030314207, b: 1, a: 0}
+  selectedColor: {r: 0.35686275, g: 0.9333334, b: 1, a: 0}
   InsultPrefab: {fileID: 8541715820628043556, guid: 3d03eb12e3de94f24b35d5ec3338ab7a,
     type: 3}
+  health: 0
+  rend: {fileID: 1080288395}
 --- !u!114 &1080288391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3201,8 +3305,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 990574843}
+  healthSlider: {fileID: 463525869}
   unitPrefab: {fileID: 1080288389}
+--- !u!23 &1080288395 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5763788974578552347, guid: de271586b79ab4d8e92b9d57337e4530,
+    type: 3}
+  m_PrefabInstance: {fileID: 633103169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1170073237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3567,6 +3677,8 @@ MonoBehaviour:
   portraitImage: {fileID: 537451714}
   meterFG: {fileID: 636238536}
   healthMeterObject: {fileID: 250849035}
+  villianMeter: {fileID: 1860543239}
+  villianHealthMeterObject: {fileID: 733740039}
 --- !u!4 &1403661963
 Transform:
   m_ObjectHideFlags: 0
@@ -3660,82 +3772,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4bb94b5d18303488fb25d7f1939de738, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744360e7c33f54dc1ab0d86022df0880, type: 3}
---- !u!1 &1411697415
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1411697416}
-  - component: {fileID: 1411697418}
-  - component: {fileID: 1411697417}
-  m_Layer: 5
-  m_Name: Meter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1411697416
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411697415}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 383851575}
-  m_Father: {fileID: 851239731}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 412.1, y: 263}
-  m_SizeDelta: {x: 200, y: 7.02}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1411697417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411697415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0f21dd03d90ac4372af9037d0ec0ef93, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1411697418
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411697415}
-  m_CullTransparentMesh: 0
 --- !u!1 &1455181842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4251,6 +4287,81 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &1647869958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647869959}
+  - component: {fileID: 1647869961}
+  - component: {fileID: 1647869960}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1647869959
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647869958}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 463525868}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1647869960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647869958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0f21dd03d90ac4372af9037d0ec0ef93, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1647869961
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647869958}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1700026114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4631,6 +4742,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1860543237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860543238}
+  - component: {fileID: 1860543240}
+  - component: {fileID: 1860543239}
+  m_Layer: 5
+  m_Name: VillianHealthFill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1860543238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860543237}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 353380859}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1860543239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860543237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 95fb8c2f8eb0a4a94a6d8fd78a001e23, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1860543240
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860543237}
+  m_CullTransparentMesh: 0
 --- !u!1 &1881508846
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4970,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899621122}
+  m_CullTransparentMesh: 0
+--- !u!1 &1962895808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962895809}
+  - component: {fileID: 1962895811}
+  - component: {fileID: 1962895810}
+  m_Layer: 5
+  m_Name: VillianHeart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1962895809
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962895808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 733740040}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -13, y: 0}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1962895810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962895808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8493dd2df29c0473bb8e99725b501ee9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1962895811
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962895808}
   m_CullTransparentMesh: 0
 --- !u!1 &2141630869
 GameObject:
@@ -5070,6 +5331,48 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Merry
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selected
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.g
+      value: 0.9677358
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hoverColor.b
+      value: 0.7311321
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.r
+      value: 0.7067823
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.g
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 89d2b9b89fa2e4cd09e437c934814322,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: merryWordsPrefab
+      value: 
+      objectReference: {fileID: 263918662825890581, guid: 85a8d3befa989473681124cdb4dc6a69,
+        type: 3}
     - target: {fileID: 5763788974578552349, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: m_Name
@@ -5080,58 +5383,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: merry
       objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: name
-      value: Merry
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selected
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.g
-      value: 0.9677358
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: hoverColor.b
-      value: 0.7311321
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.r
-      value: 0.7067823
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.g
-      value: 0.7264151
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: selectedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: portrait
-      value: 
-      objectReference: {fileID: 21300000, guid: 89d2b9b89fa2e4cd09e437c934814322,
-        type: 3}
-    - target: {fileID: -7460617900772274715, guid: de271586b79ab4d8e92b9d57337e4530,
-        type: 3}
-      propertyPath: merryWordsPrefab
-      value: 
-      objectReference: {fileID: 263918662825890581, guid: 85a8d3befa989473681124cdb4dc6a69,
-        type: 3}
     - target: {fileID: 7354332489485286838, guid: de271586b79ab4d8e92b9d57337e4530,
         type: 3}
       propertyPath: name
@@ -5204,6 +5455,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de271586b79ab4d8e92b9d57337e4530, type: 3}
+--- !u!23 &5763788975164307879 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5763788974578552347, guid: de271586b79ab4d8e92b9d57337e4530,
+    type: 3}
+  m_PrefabInstance: {fileID: 5763788975164307878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6685704762358584218
 PrefabInstance:
   m_ObjectHideFlags: 0

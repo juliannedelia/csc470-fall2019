@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 5763788974578552347}
   - component: {fileID: 5763788974578552346}
   - component: {fileID: -8107724058973729028}
-  - component: {fileID: -7460617900772274715}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -301,22 +300,3 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7460617900772274715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5763788974578552349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e20fdbff678c47a28168dfe1389a1af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selected: 0
-  name: 
-  portrait: {fileID: 0}
-  hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
-  destination: {x: 0, y: 0, z: 0}
-  rend: {fileID: 5763788974578552347}

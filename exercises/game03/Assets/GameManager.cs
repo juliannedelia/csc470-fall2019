@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public Image meterFG;
     public GameObject healthMeterObject;
 
+	public Image villianMeter;
+	public GameObject villianHealthMeterObject;
+
 
     // Start is called before the first frame update
     void Start()

@@ -7,7 +7,10 @@ public class VillianScript : MonoBehaviour
     public string name;
 	public Sprite portrait;
 
-	public float health;
+    public bool selected = false;
+	bool hover = false;
+
+	//public float health;
 
 	Color defautColor;
 	public Color hoverColor;
@@ -15,9 +18,24 @@ public class VillianScript : MonoBehaviour
 
     public GameObject InsultPrefab;
 
+    public float health;
+    GameManager gm;
+    CharacterController cc;
+    public Renderer rend;
+
     // Start is called before the first frame update
     void Start()
     {
+        health = 100;
+        GameObject gmObj = GameObject.Find("GameManagerObject");
+		gm = gmObj.GetComponent<GameManager>();
+
+        cc = gameObject.GetComponent<CharacterController>();
+
+        defautColor = rend.material.color;
+
+        setColorOnMouseState();
+
         StartCoroutine(DelayShoot());
     }
 
@@ -28,6 +46,22 @@ public class VillianScript : MonoBehaviour
         
         
     }
+
+    public void setColorOnMouseState()
+	{
+		if (selected) 
+		{
+			rend.material.color = selectedColor;
+		} 
+		else if (hover) 
+		{
+			rend.material.color = hoverColor;
+		} 
+		else 
+		{
+			rend.material.color = defautColor;
+		}
+	}
 
     IEnumerator DelayShoot()
     {
@@ -41,7 +75,24 @@ public class VillianScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEvent(Collider unit)
+    private void OnMouseOver()
+	{
+		hover = true;
+		setColorOnMouseState();
+
+		gm.villianHealthMeterObject.SetActive(true);
+		gm.villianMeter.fillAmount = health / 100;
+		gm.villianHealthMeterObject.transform.position = Camera.main.WorldToScreenPoint(
+																		transform.position + Vector3.up * 2);
+	}
+	private void OnMouseExit()
+	{
+		gm.villianHealthMeterObject.SetActive(false);
+		hover = false;
+		setColorOnMouseState();
+	}
+
+    /* void OnTriggerEvent(Collider unit)
 	{
 		if(unit.gameObject.tag == "merryWords")
 		{
@@ -51,5 +102,5 @@ public class VillianScript : MonoBehaviour
         {
             Destroy(unit);
         }
-	} 
+	} */ 
 }

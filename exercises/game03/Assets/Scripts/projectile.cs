@@ -37,22 +37,32 @@ public class projectile : MonoBehaviour
         {
             playerHealth us = c.gameObject.GetComponent<playerHealth>();
             us.TakeDamage(10);
-            Debug.Log("hit by villian");
+            //Debug.Log("hit by villian");
             /* if(us.health == 0)
             {
                 SceneManager.LoadScene("youLose");
             } */
         }
 
+        if(c.gameObject.tag == "merry" && gameObject.tag == "merryWords")
+        {
+            Debug.Log("");
+        }
+
         if(c.gameObject.tag == "villian" && gameObject.tag == "merryWords")
         {
             playerHealth vs = c.gameObject.GetComponent<playerHealth>();
             vs.TakeDamage(10);
-            Debug.Log("hit by hero");
+            //Debug.Log("hit by hero");
             /* if(vs.health == 0)
             {
                 SceneManager.LoadScene("youWin");
             } */
+        }
+
+        if(c.gameObject.tag == "villian" && gameObject.tag == "insult")
+        {
+            Debug.Log("");
         }
 	}
 }
