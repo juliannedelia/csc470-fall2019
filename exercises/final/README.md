@@ -4,8 +4,11 @@ Lulu's Sweet Adventure
 This game will be an adventure-style game. The levels will be set up as a maze that the player must navigate through in order to defeat the level. The theme of this game will be foods—specifically comfort food (okay, okay it’s really just junk food). The color scheme will be bright colors and the audio will match the uplifting mood. The main character is a little pig named Lulu. Lulu is trying to get to the diner at the end of the game. To stick with the bubbly, food theme, the color scheme will include a lot of blues, pinks, and purples. The villain will be a mouse named Buster.
 
 ### Potential Color Schemes
-![alt text][color scheme 1]
-[color scheme 1]: https://github.com/juliannedelia/csc470-fall2019/blob/master/exercises/final/colors1.png
+![alt text][colors1]
+[colors1]: https://github.com/juliannedelia/csc470-fall2019/blob/master/exercises/final/colors1.png "color scheme 1"
+
+![alt text][colors2]
+[colors2]: https://github.com/juliannedelia/csc470-fall2019/blob/master/exercises/final/colors2.png "color scheme 2"
 
 ### Lulu's Functions
 * When she walks, Lulu will waddle side to side
