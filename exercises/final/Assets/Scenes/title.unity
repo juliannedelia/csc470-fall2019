@@ -801,8 +801,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Collect the donut on each level to unlock the next level. For extra points,
     collect all the other food products. If you collect something that is not a food
-    product, you lose a life. If you get hit by a mouse, you lose a life. If you make
-    it to the diner at the end, you win!
+    product, you lose 10 points. If you get hit by a mouse, you lose a life. If you
+    make it to the diner at the end, you win!
 
     Click "Start" to begin.'
 --- !u!222 &1312849251
