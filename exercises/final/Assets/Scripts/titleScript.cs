@@ -9,6 +9,8 @@ public class titleScript : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        PlayerPrefs.SetInt("score", 0);
+        PlayerPrefs.SetInt("health", 3);
     }
 
     // Update is called once per frame
