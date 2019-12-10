@@ -10,6 +10,7 @@ TagManager:
   - diner
   - buster
   - archway1
+  - water
   layers:
   - Default
   - TransparentFX

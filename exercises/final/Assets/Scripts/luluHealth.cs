@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class luluHealth : MonoBehaviour
 {
-    public int startingHealth = 3;
-    public int currentHealth;
-    private int healthPP;
+   // public int startingHealth = 3;
+    private int currentHealth;
+    //private int healthPP;
     public Slider healthSlider;
     public Image damageImage;
     public float flashSpeed = 5f;
@@ -21,8 +21,9 @@ public class luluHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = startingHealth;
-        healthPP = PlayerPrefs.GetInt("health");
+        currentHealth = PlayerPrefs.GetInt("health");
+        //healthPP = PlayerPrefs.GetInt("health");
+        //currentHealth = PlayerPrefs.GetInt("health");
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class luluHealth : MonoBehaviour
         damaged = true;
 
         currentHealth -= amount;
-        PlayerPrefs.SetInt("health", healthPP);
+        PlayerPrefs.SetInt("health", currentHealth);
 
         healthSlider.value = currentHealth;
 

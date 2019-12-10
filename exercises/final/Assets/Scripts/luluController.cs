@@ -19,14 +19,25 @@ public class luluController : MonoBehaviour
     public GameObject dinerPrefab;
     public GameObject archPrefab;
 
-    private int healthPP;
+    //private int healthPP;
+
+    public float x = 1.1f;
+    public float y = 1.1f;
+    public float z = 1.1f;
+
+    bool power = false;
+
+    public Image powerImage;
+    public Color powerflashColor = new Color(1f, 0f, 0f, 0.1f);
+    public Image normalImage;
+    public Color normalColor = new Color(0f, 0f, 0f, 0f);
 
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
         count = PlayerPrefs.GetInt("score");
-        healthPP = PlayerPrefs.GetInt("health");
+       
         // PlayerPrefs.SetInt("Score", count);
         // PlayerPrefs.Save();
         SetCountText();
@@ -86,15 +97,25 @@ public class luluController : MonoBehaviour
 
         if(other.gameObject.CompareTag("buster"))
         {
-            //SceneManager.LoadScene("lose");
-            count = count - 10;
-            PlayerPrefs.SetInt("score", count);
-            SetCountText();
-            luluHealth health = gameObject.GetComponent<luluHealth>();
-            health.TakeDamage();
-            PlayerPrefs.SetInt("health", healthPP);
+            if(power == false)
+            {
+                //SceneManager.LoadScene("lose");
+                count = count - 10;
+                PlayerPrefs.SetInt("score", count);
+                SetCountText();
+                luluHealth health = gameObject.GetComponent<luluHealth>();
+                health.TakeDamage();
+                //PlayerPrefs.SetInt("health", healthPP);
+                //Debug.Log("hit by buster");
+            }
             
-            Debug.Log("hit by buster");
+            if(power == true)
+            {
+                other.gameObject.SetActive(false);
+                count = count + 50;
+                SetCountText();
+                PlayerPrefs.SetInt("score", count);
+            }
         }
 
         if(other.gameObject.CompareTag("diner"))
@@ -111,7 +132,18 @@ public class luluController : MonoBehaviour
             SetCountText();
             PlayerPrefs.SetInt("score", count);
             SceneManager.LoadScene("level2");
-        }      
+        } 
+
+        if(other.gameObject.CompareTag("water"))
+        {
+            power = true;
+            
+            other.gameObject.SetActive(false);
+            count = count + 20;
+            SetCountText();
+            PlayerPrefs.SetInt("score", count);
+            PowerUp();
+        }     
     }
 
     void SetCountText()
@@ -119,4 +151,28 @@ public class luluController : MonoBehaviour
         //PlayerPrefs.SetInt("Score: ", count);
         countText.text = "Score: " + count.ToString();
     }
+
+    void PowerUp()
+    {
+        transform.localScale = new Vector3(x, y, z);
+        StartCoroutine(PowerUpWearOff(5f));
+        if(power)
+        {
+            powerImage.color = powerflashColor;
+        }
+        else
+        {
+            powerImage.color = normalColor;
+        }
+    }
+
+    IEnumerator PowerUpWearOff(float waitTime)
+    {
+        //PlayerShooting.timeBetweenBullets -= RFBoostValue; // add boost
+        yield return new WaitForSeconds(waitTime);
+        transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        powerImage.color = normalColor;
+        //PlayerShooting.timeBetweenBullets += RFBoostValue; // remove boost
+    }
+
 }

@@ -8,7 +8,7 @@ public class titleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         PlayerPrefs.SetInt("score", 0);
         PlayerPrefs.SetInt("health", 3);
     }
