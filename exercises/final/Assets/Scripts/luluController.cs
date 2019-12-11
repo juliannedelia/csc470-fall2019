@@ -171,6 +171,7 @@ public class luluController : MonoBehaviour
         //PlayerShooting.timeBetweenBullets -= RFBoostValue; // add boost
         yield return new WaitForSeconds(waitTime);
         transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        power = false;
         powerImage.color = normalColor;
         //PlayerShooting.timeBetweenBullets += RFBoostValue; // remove boost
     }
