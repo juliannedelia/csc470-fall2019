@@ -23,6 +23,11 @@ public class titleScript : MonoBehaviour
     {
         SceneManager.LoadScene("level1");
     }
+
+    public void InstructionsButton()
+    {
+        SceneManager.LoadScene("instructions");
+    }
 }
 
 
